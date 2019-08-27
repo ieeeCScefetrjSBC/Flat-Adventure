@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveDelete : MonoBehaviour
 {
-    public float speed = 3;
+    [HideInInspector]public float speed = 3;
 
     // Update is called once per frame
     void Update()

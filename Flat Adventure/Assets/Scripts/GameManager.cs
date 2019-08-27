@@ -6,10 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager GM = null;
 
-    public static float gSpeed;
+    public static float gSpeed = 3;
     public enum Event { RandomRocks, Octopus }
 
-    public GameObject rock;
+    public MoveDelete rock;
     public GameObject octopus;
 
     private void Awake()
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
             int x = Random.Range(10, 30);
             int y = Random.Range(-5, 1);
 
-            Instantiate(GM.rock, new Vector2(x, y), Quaternion.identity);
+            Instantiate(GM.rock, new Vector2(x, y), Quaternion.identity).speed = gSpeed;
 
         }
 
