@@ -8,7 +8,10 @@ public class DayCicle : MonoBehaviour
     public Transform moon;
     public Vector2 radius;
     public float speed;
-
+    public UnityEngine.Experimental.Rendering.LWRP.Light2D globalLight;
+    public UnityEngine.Experimental.Rendering.LWRP.Light2D boatLight;
+    public Color dayColor;
+    public Color nightColor;
 
     float angle = 0;
 
@@ -23,6 +26,13 @@ public class DayCicle : MonoBehaviour
 
         angle += speed * Time.deltaTime;
 
+        y = (y / radius.y + 1) / 2f;
+
+        globalLight.color = y * dayColor + (1f - y) * nightColor;
+
     }
+
+
+
 
 }

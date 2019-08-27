@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 7236cb175f72a4549bff40ba063f2cdb
+guid: 94e4233c5f5e5e84a81657c0c55f45a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4548796474974412338
-    second: Boat_0
+      213: 3041970383809997380
+    second: Octopus_0
   - first:
-      213: 7632911036448307472
-    second: Boat_1
+      213: -3771765876042405461
+    second: Octopus_1
   - first:
-      213: -6510708078897605904
-    second: Boat_2
+      213: -4843423368283092884
+    second: Octopus_2
   - first:
-      213: -4004004091888637276
-    second: Boat_3
+      213: -45465870562817968
+    second: Octopus_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -98,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boat_0
+      name: Octopus_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8e1bd8863531e542ad99399f788cc9a
-      internalID: -4548796474974412338
+      spriteID: 4b459f72d4af2e3459b1a34db40cdbbc
+      internalID: 3041970383809997380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boat_1
+      name: Octopus_1
       rect:
         serializedVersion: 2
         x: 32
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49b4d51e698d40d4eac0b35ef61974d3
-      internalID: 7632911036448307472
+      spriteID: d76b8a950668d88478a07cbcd6fe0cd3
+      internalID: -3771765876042405461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boat_2
+      name: Octopus_2
       rect:
         serializedVersion: 2
         x: 64
@@ -154,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 771ca53e2306d404781bbd9e1fd99500
-      internalID: -6510708078897605904
+      spriteID: ff8a68ece40eb8e48b5632b8724aa72e
+      internalID: -4843423368283092884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boat_3
+      name: Octopus_3
       rect:
         serializedVersion: 2
         x: 96
@@ -175,8 +175,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e27af6d5d430d34297408f5bf257d1a
-      internalID: -4004004091888637276
+      spriteID: 58f4b7275962fd3418a37fca1acf6602
+      internalID: -45465870562817968
       vertices: []
       indices: 
       edges: []
