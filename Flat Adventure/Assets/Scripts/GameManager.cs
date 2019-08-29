@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public static float gSpeed = 3;
     public enum Event { RandomRocks, Octopus }
 
-    public MoveDelete rock;
+    public MoveDelete[] rocks;
     public GameObject octopus;
 
     private void Awake()
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
             int x = Random.Range(10, 30);
             int y = Random.Range(-5, 1);
 
-            Instantiate(GM.rock, new Vector2(x, y), Quaternion.identity).speed = gSpeed;
+            Instantiate(GM.rocks[Random.Range(0, 2)], new Vector2(x, y), Quaternion.identity).speed = gSpeed;
 
         }
 

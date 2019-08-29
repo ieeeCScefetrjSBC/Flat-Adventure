@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8544646603537644839}
   - component: {fileID: 6243204232627786174}
   - component: {fileID: -9100622569304041379}
-  - component: {fileID: 6072100475382233158}
+  - component: {fileID: 5702061865168357376}
   m_Layer: 0
-  m_Name: Rock
+  m_Name: Rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 4488322318285022434, guid: 9c2982317e1f2d74da103c680aa2b612,
+  m_Sprite: {fileID: 4246834096791633373, guid: ea07243152a99744581a532c59f1a04a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -129,7 +129,7 @@ Animator:
   m_GameObject: {fileID: 8544646603537644835}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 20e7e367a6e78cc438471a95bfbfeca5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2669f01aea75696468e1e7e7863f2ad3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -138,7 +138,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &6072100475382233158
+--- !u!60 &5702061865168357376
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,9 +163,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.3125}
-      - {x: -0.5, y: -0.375}
-      - {x: -0.4375, y: -0.46875}
+    - - {x: 0, y: 0.25}
+      - {x: -0.4375, y: -0.125}
+      - {x: -0.46875, y: -0.3125}
+      - {x: -0.40625, y: -0.46875}
       - {x: 0.5, y: -0.46875}
-      - {x: 0.5, y: -0.1875}
-      - {x: 0, y: 0.3125}
+      - {x: 0.5, y: 0.1875}
+      - {x: 0.375, y: 0.25}
