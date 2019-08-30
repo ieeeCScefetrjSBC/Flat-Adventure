@@ -11,25 +11,27 @@ public class GameManager : MonoBehaviour
     public static float gSpeed = 3;
     public static float dificulty = 3;
     public static float interval = 0;
-    public enum Event { RandomRocks, Octopus }
+    public enum Event { RandomRocks, Octopus, GhostShip }
 
     public MoveDelete[] rocks;
     public MoveDelete octopus;
+    public MoveDelete ghostShip;
 
     private void Awake()
     {
         GM = this;
-
-        InitEvent(Event.Octopus);
+        gSpeed = 3;
+        dificulty = 1;
+        InitEvent(Event.GhostShip);
     }
 
     private void Update()
     {
         if (interval < 0)
         {
-            InitEvent((Event)Random.Range(0, 2));
-            if (gSpeed < maxSpeed) gSpeed += .5f;
-            else if (dificulty < maxDificulty) dificulty += .5f;
+            InitEvent((Event)Random.Range(0, 3));
+            if (dificulty < maxDificulty) dificulty += .5f;
+            else if (gSpeed < maxSpeed) gSpeed += .25f;
 
         }
         else
@@ -47,6 +49,9 @@ public class GameManager : MonoBehaviour
                 break;
             case Event.Octopus:
                 Octopus();
+                break;
+            case Event.GhostShip:
+                GhostShip();
                 break;
         }
     }
@@ -71,6 +76,38 @@ public class GameManager : MonoBehaviour
         int y = Random.Range(-4, 1);
         Instantiate(GM.octopus, new Vector2(10, y), Quaternion.identity).speed = gSpeed;
         interval = 1 / gSpeed * 20;
+    }
+
+    static void GhostShip()
+    {
+        List<Vector2> positions = new List<Vector2>();
+        int n = (int)(dificulty);
+
+        while (n > 0)
+        {
+            int x = (Random.Range(0, 2) * 2 - 1);
+            int y = Random.Range(-4, 1);
+
+            bool canSpawn = true;
+
+            for (int j = 0; j < positions.Count; j++)
+            {
+                if (positions[j].x == x * 10 && positions[j].y == y)
+                {
+                    canSpawn = false;
+                }
+            }
+
+            if (canSpawn)
+            {
+                Instantiate(GM.ghostShip, new Vector2(x * 10, y), Quaternion.identity).speed = x * gSpeed;
+                interval = 1 / gSpeed * 20;
+                n--;
+                positions.Add(new Vector2(x * 10, y));
+            }
+        }
+
+
     }
 
 }

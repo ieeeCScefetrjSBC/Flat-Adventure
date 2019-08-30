@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class MoveDelete : MonoBehaviour
 {
-    [HideInInspector]public float speed = 3;
+    [HideInInspector] public float speed = 3;
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= -10)
+        if ((speed > 0 && transform.position.x <= -10 )|| (speed < 0 && transform.position.x >= 10))
         {
+            //Debug.Log(speed + "|" + transform.position.x);
             Destroy(gameObject);
             return;
         }

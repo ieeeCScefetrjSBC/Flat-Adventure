@@ -7,7 +7,6 @@ public class Player : MonoBehaviour
 {
     public static Player P = null;
 
-    public float speed;
     public int maxHp;
     public int hp;
 
@@ -39,7 +38,7 @@ public class Player : MonoBehaviour
         if ((x < 0 && transform.position.x <= -8.5f) || (x > 0 && transform.position.x >= 8.5f)) x = 0;
         if ((y < 0 && transform.position.y <= -4.5f) || (y > 0 && transform.position.y >= 1f)) y = 0;
 
-        rb2d.velocity = speed * new Vector2(x, y).normalized;
+        rb2d.velocity = (GameManager.gSpeed + 2) * new Vector2(x, y).normalized;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

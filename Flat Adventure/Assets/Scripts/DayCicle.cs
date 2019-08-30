@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DayCicle : MonoBehaviour
 {
+    public static float y;
+
     public Transform sun;
     public Transform moon;
     public Vector2 radius;
@@ -19,7 +21,7 @@ public class DayCicle : MonoBehaviour
     {
 
         float x = -Mathf.Sin(Mathf.Deg2Rad * angle) * radius.x;
-        float y = Mathf.Cos(Mathf.Deg2Rad * angle) * radius.y;
+        y = Mathf.Cos(Mathf.Deg2Rad * angle) * radius.y;
 
         sun.localPosition = new Vector2(x, y);
         moon.localPosition = new Vector2(-x, -y);
@@ -29,7 +31,7 @@ public class DayCicle : MonoBehaviour
         y = (y / radius.y + 1) / 2f;
 
         globalLight.color = y * dayColor + (1f - y) * nightColor;
-
+        boatLight.intensity = 1f - y;
     }
 
 
