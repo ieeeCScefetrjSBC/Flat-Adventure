@@ -9,11 +9,12 @@ public class MoveDelete : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= -20)
+        if (transform.position.x <= -10)
         {
             Destroy(gameObject);
             return;
         }
         transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
+
 }

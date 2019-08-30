@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: DayCicle
+    uniqueID: 3407415947
+    locked: 0
+  - name: Parallax
+    uniqueID: 3229476045
+    locked: 0
+  - name: Water
+    uniqueID: 2641303615
+    locked: 0
+  - name: Objects
+    uniqueID: 4290012891
+    locked: 0

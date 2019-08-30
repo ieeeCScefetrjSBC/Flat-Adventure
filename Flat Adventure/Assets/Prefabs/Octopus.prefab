@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 2456547089427722773}
   - component: {fileID: 2456547089427722774}
   - component: {fileID: 2456547089427722775}
+  - component: {fileID: 7955474565450862996}
+  - component: {fileID: 5873494256010608066}
+  - component: {fileID: -1590578999127259840}
+  - component: {fileID: 2597886608654162633}
   m_Layer: 0
   m_Name: Octopus
   m_TagString: Untagged
@@ -67,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: -4954405
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 3041970383809997380, guid: 94e4233c5f5e5e84a81657c0c55f45a2,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -101,3 +105,73 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7955474565450862996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456547089427722760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 464ccc9cbc92ebb419bbd37d66fe7fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tentacle: {fileID: 5345983638555648434, guid: c01ea091f7c4a27458fcf5bb27dcac4a,
+    type: 3}
+--- !u!114 &5873494256010608066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456547089427722760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac802215d58429049913b52caaec84d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+--- !u!114 &-1590578999127259840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456547089427722760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071a3656cb5fe5844ae65ff3a205288f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &2597886608654162633
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456547089427722760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.25057507, y: -0.029354095}
+      - {x: -0.48408747, y: -0.18617928}
+      - {x: -0.5, y: -0.5}
+      - {x: 0.5, y: -0.5}
+      - {x: 0.4522624, y: -0.094815135}
+      - {x: 0.030845165, y: 0.0997144}
