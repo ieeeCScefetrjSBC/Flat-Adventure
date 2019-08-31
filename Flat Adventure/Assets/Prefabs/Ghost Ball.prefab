@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 7479376504416907891}
   - component: {fileID: 8556792930336120083}
   - component: {fileID: 2089231243034716021}
+  - component: {fileID: 8315880795674974551}
   m_Layer: 0
   m_Name: Ghost Ball
-  m_TagString: GhostBall
+  m_TagString: GhostShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 7479376504416907896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.24, y: 0.078, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -164,5 +165,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26e012703e297a84f97cd698ae68c822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8315880795674974551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7479376504416907896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03bf8f997604f84c98d4156e82f7c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2622871916354023593}
   - component: {fileID: -1580227107240570555}
   - component: {fileID: 7787014399871980000}
+  - component: {fileID: -2694062296691672005}
+  - component: {fileID: -4363390701283360360}
   m_Layer: 0
   m_Name: Ghost Ship
   m_TagString: GhostShip
@@ -159,7 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac802215d58429049913b52caaec84d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &7787014399871980000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +175,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 2089231243034716021, guid: 85f1528dc6f048941be065daae7a6cd2, type: 3}
   boatLight: {fileID: 9188477567910035120}
+--- !u!50 &-2694062296691672005
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525516576092569407}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-4363390701283360360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525516576092569407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03bf8f997604f84c98d4156e82f7c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3079996152953869326
 GameObject:
   m_ObjectHideFlags: 0

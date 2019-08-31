@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 5873494256010608066}
   - component: {fileID: -1590578999127259840}
   - component: {fileID: 2597886608654162633}
+  - component: {fileID: -6381671423311724547}
+  - component: {fileID: -1880762188307875636}
   m_Layer: 0
   m_Name: Octopus
-  m_TagString: Untagged
+  m_TagString: Octopus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac802215d58429049913b52caaec84d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &-1590578999127259840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,3 +176,36 @@ PolygonCollider2D:
       - {x: 0.5, y: -0.5}
       - {x: 0.4522624, y: -0.094815135}
       - {x: 0.030845165, y: 0.0997144}
+--- !u!50 &-6381671423311724547
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456547089427722760}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-1880762188307875636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456547089427722760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03bf8f997604f84c98d4156e82f7c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

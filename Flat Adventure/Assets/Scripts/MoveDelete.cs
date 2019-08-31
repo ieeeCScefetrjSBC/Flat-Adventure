@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class MoveDelete : MonoBehaviour
 {
-    [HideInInspector] public float speed = 3;
+    float speed = 3;
+
+    public void SetSpeed(float s, bool flip = false)
+    {
+        speed = s;
+        if (flip) GetComponent<SpriteRenderer>().flipX = true;
+    }
 
     // Update is called once per frame
     void Update()

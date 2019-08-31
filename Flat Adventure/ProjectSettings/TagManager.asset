@@ -6,6 +6,9 @@ TagManager:
   tags:
   - GhostShip
   - GhostBall
+  - Octopus
+  - Rock
+  - Barrel
   layers:
   - Default
   - TransparentFX

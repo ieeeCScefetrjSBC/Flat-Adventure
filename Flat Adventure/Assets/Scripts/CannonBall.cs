@@ -21,19 +21,16 @@ public class CannonBall : MonoBehaviour
         rb2d.velocity = dir;
         transform.rotation = Quaternion.FromToRotation(Vector3.right, dir);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("GhostShip") || collision.CompareTag("GhostBall")) return;
-        Destroy(gameObject);
-    }
-
+    
     IEnumerator Growing()
     {
+        Vector2 dest = transform.localScale;
+        transform.localScale = Vector2.zero;
+
         float time = 1f;
         while(time > 0)
         {
-            transform.localScale = Vector2.Lerp(transform.localScale, Vector2.one * .5f, 20f * Time.deltaTime);
+            transform.localScale = Vector2.Lerp(transform.localScale, dest, 10f * Time.deltaTime);
             time -= Time.deltaTime;
             yield return null;
         }

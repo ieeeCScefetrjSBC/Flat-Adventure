@@ -9,10 +9,15 @@ public class Player : MonoBehaviour
 
     public int maxHp;
     public int hp;
+    public PlayerHpUI hpUI;
+    public CannonBall cannonBall;
+    public Camera cam;
+    public UnityEngine.Experimental.Rendering.LWRP.Light2D boatLight;
 
     Rigidbody2D rb2d;
     bool invencible = false;
     SpriteRenderer srender;
+    float shootInterval;
 
     private void Awake()
     {
@@ -25,7 +30,32 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.gameOver) return;
+
         MoveUpdate();
+        ShootUpdate();
+
+
+
+    }
+
+    void ShootUpdate()
+    {
+        if (shootInterval <= 0)
+        {
+            if (Input.GetMouseButtonDown(0) && !GameManager.paused)
+            {
+                Vector3 dir = (cam.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+                dir.z = 0;
+                dir.Normalize();
+                Instantiate(cannonBall, transform.position + dir * .5f, Quaternion.identity).SetVelocity(dir * 10f);
+                shootInterval = .25f;
+            }
+        }
+        else
+        {
+            shootInterval -= Time.deltaTime;
+        }
 
 
     }
@@ -43,23 +73,38 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (invencible) return;
+        if (invencible || collision.CompareTag(transform.tag)) return;
+
+        if (collision.CompareTag("Barrel"))
+        {
+
+            return;
+        }
+
         StopAllCoroutines();
         StartCoroutine(Bounce());
         StartCoroutine(Blink());
         EZCameraShake.CameraShaker.Instance.ShakeOnce(4f, 4f, 1, .1f);
 
         hp--;
-        if (hp <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        hpUI.SetFill(hp, maxHp);
+        if (hp <= 0)
+        {
+            GameManager.GameOver();
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            rb2d.velocity = Vector2.zero;
+            boatLight.intensity = 0;
+        }
     }
 
     IEnumerator Bounce()
     {
-        transform.localScale = Vector2.one * 2f;
+        hpUI.transform.localScale = transform.localScale = Vector2.one * 2f;
         float time = .5f;
         while (time > 0)
         {
-            transform.localScale = Vector2.Lerp(transform.localScale, Vector2.one, 10f * Time.deltaTime);
+            hpUI.transform.localScale = transform.localScale = Vector2.Lerp(transform.localScale, Vector2.one, 10f * Time.deltaTime);
             time -= Time.deltaTime;
             yield return null;
         }
