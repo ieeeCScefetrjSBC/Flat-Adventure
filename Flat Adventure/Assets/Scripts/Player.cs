@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (invencible || collision.CompareTag(transform.tag)) return;
+        if (collision.CompareTag(transform.tag)) return;
 
         if (collision.CompareTag("Barrel"))
         {
@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
             UpdateAmunition();
             return;
         }
+        else if (invencible) return;
 
         StopAllCoroutines();
         StartCoroutine(Bounce());
@@ -103,7 +104,8 @@ public class Player : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
             rb2d.velocity = Vector2.zero;
-            boatLight.intensity = 0;
+            boatLight.enabled = false;
+            for (int i = 0; i < ammunitionSprite.Length; i++) ammunitionSprite[i].srender.enabled = false;
         }
     }
 

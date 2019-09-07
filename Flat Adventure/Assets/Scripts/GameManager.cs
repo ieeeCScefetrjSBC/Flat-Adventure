@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public static bool gameOver = false;
     public enum Event { RandomRocks, Octopus, GhostShip }
 
+
+    public MoveDelete[] wonders;
     public MoveDelete[] rocks;
     public MoveDelete octopus;
     public MoveDelete ghostShip;
@@ -37,7 +39,6 @@ public class GameManager : MonoBehaviour
         paused = false;
         gameOver = false;
         interval = 2f;
-
         StartCoroutine(UpdatingScore());
         InitEvent(Event.RandomRocks);
     }
@@ -111,17 +112,28 @@ public class GameManager : MonoBehaviour
                 if (response <= 0) continueMsg.SetActive(true);
             }
         }
+        
 
     }
-
+    
     IEnumerator UpdatingScore()
     {
         while (true)
         {
             scoreText.text = ((int)score).ToString() + " km";
+            SpawnWonder();
             yield return new WaitForSeconds(.5f);
             if (gameOver) break;
         }
+    }
+
+    int nextWonder = 0;
+
+    void SpawnWonder()
+    {
+        if (score < nextWonder * 5714) return;
+        Instantiate(wonders[nextWonder % 7], new Vector2(10, 2.25f), Quaternion.identity).SetSpeed(gSpeed);
+        nextWonder++;
     }
 
     public static void InitEvent(Event type)

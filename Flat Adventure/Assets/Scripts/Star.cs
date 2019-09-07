@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
-    public UnityEngine.Experimental.Rendering.LWRP.Light2D light;
+    public UnityEngine.Experimental.Rendering.LWRP.Light2D slight;
     SpriteRenderer srender;
 
     private void Awake()
@@ -15,7 +15,7 @@ public class Star : MonoBehaviour
     private void Update()
     {
         srender.color = new Color(1, 1, 1, 1f - DayCicle.y);
-        light.intensity = 1f - DayCicle.y;
+        slight.intensity = 1f - DayCicle.y;
     }
 
 }
